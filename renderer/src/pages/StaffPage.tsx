@@ -1,0 +1,5 @@
+import { PageLayout } from "./OrdersPage";
+
+export default function StaffPage() {
+  return <PageLayout title="Staff" description="Manage your team members and roles."><section className="rounded-lg border border-[#e9ebf1] bg-white p-4"><div className="flex items-center justify-between border-b border-[#eff0f4] pb-3"><h2 className="text-sm font-semibold">Team members</h2><button className="rounded-md bg-[#5745d9] px-3 py-2 text-[10px] text-white">+ Add Staff</button></div>{[["MD Atikur Rahman", "Administrator", "Active"], ["Maria Garcia", "Manager", "Active"], ["James Wilson", "Cashier", "Active"], ["Liam Davis", "Waiter", "Away"]].map(([name, role, status]) => <div className="flex items-center justify-between border-b border-[#eff0f4] py-3 last:border-0" key={name}><div><strong className="block text-[11px]">{name}</strong><span className="text-[9px] text-[#858896]">{role}</span></div><span className={`rounded-full px-2 py-1 text-[9px] ${status === "Active" ? "bg-[#eaf9f0] text-[#34a965]" : "bg-[#fff5df] text-[#bc7b13]"}`}>{status}</span></div>)}</section></PageLayout>;
+}
